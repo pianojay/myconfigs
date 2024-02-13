@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Enable dotglob to include hidden files (dot files)
+shopt -s dotglob
+
+# Source directory containing the files to be symlinked
+SOURCE_DIR="$1"
+
+# Destination directory where symlinks will be created
+DEST_DIR="$2"
+
+# List of specific file names to check against
+FILENAMES=("." ".." "README.md" ".git")
+
+# Check if source directory exists
+if [ ! -d "$SOURCE_DIR" ]; then
+    echo "Error: Source directory $SOURCE_DIR does not exist."
+    exit 1
+fi
+
+# Check if destination directory exists
+if [ ! -d "$DEST_DIR" ]; then
+    echo "Error: Destination directory $DEST_DIR does not exist."
+    exit 1
+fi
+
+# Iterate over each file in the source directory
+for FILE in "$SOURCE_DIR"/*; do
+    # Check if FILE is a regular file (not a directory or symlink)
+    if [ -f "$FILE" ]; then
+        # Extract the filename from the full path
+        FILENAME=$(basename "$FILE")
+        
+        # Check if FILENAME matches any of the specific file names
+        if [[ " ${FILENAMES[@]} " =~ " $FILENAME " ]]; then
+            echo "Skipping $FILENAME"
+    	else
+            # Create symbolic link in the destination directory
+	    ln -s "$FILE" "$DEST_DIR/$FILENAME"
+	    echo "Created symlink for $FILENAME"
+        fi
+    fi
+done
+
