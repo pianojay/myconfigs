@@ -118,3 +118,10 @@ fi
 
 # For cargo (2024.02.11) - linoops
 export PATH="$PATH:/home/linoops/.cargo/bin"
+
+# For pip (2024.02.14) - linoops
+export PATH="$PATH:/home/linoops/.local/bin"
+
+# . my1
+echo Customizing prompt...
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\t\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]🐧 '

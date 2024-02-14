@@ -187,7 +187,7 @@ let g:ale_list_window_size = 3
 let g:ale_floating_preview=1
 let g:ale_floating_window_border=['│', '─', '╭', '╮', '╯', '╰', '│', '─']
 
-let g:ale_enabled=1
+"let g:ale_enabled=1
 
 """""""""""""""""""""""""""""""""""""""""""""""
 "skyline 플러그인
