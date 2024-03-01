@@ -21,6 +21,9 @@ set background=dark
 "똑똑한 <BS>
 set backspace=indent,eol,start
 
+"C 문법을 따르는 인덴팅 (사실 문법이라기 보다는 convention)
+set cindent
+
 "지정 열에 하이라이트 (너무 길게 쓰지 말라) (PEP 8)
 set colorcolumn=80
 
@@ -40,6 +43,16 @@ au FileType python setlocal expandtab
 
 "tab를 space로: :retab
 "space를 tab로: :retab!
+
+"From an example of fold.txt
+"set foldtext=MyFoldText()
+function MyFoldText()
+	let line = getline(v:foldstart)
+	let sub = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g')
+	return v:folddashes .. sub
+endfunction
+
+
 
 "고급 검색 기능
 set hlsearch
@@ -62,6 +75,7 @@ set listchars+=trail:\\u00b7
 "다음은 파이썬 전용
 au FileType python retab!
 au FileType python setlocal listchars+=multispace:\ \ \ \\u0701
+au FileType make retab
 
 "%로 이동할 괄호의 짝 추가 지정
 set mps+=<:>
@@ -178,16 +192,21 @@ let g:minimap_exec_warning=0 "그냥 꺼둠.
 """""""""""""""""""""""""""""""""""""""""""""""
 "ALE linter 플러그인
 "더 공부해야 한다.
-let g:ale_completion_enabled=1
 let g:ale_cursor_detail=1
-let g:ale_close_preview_on_insert=1
+let g:ale_echo_delay=200
 
 let g:ale_list_window_size = 3
-
 let g:ale_floating_preview=1
 let g:ale_floating_window_border=['│', '─', '╭', '╮', '╯', '╰', '│', '─']
 
-"let g:ale_enabled=1
+let g:ale_close_preview_on_insert = 1
+let g:ale_completion_delay = 1000
+
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_insert_leave = 0
+
+let g:ale_virtualtext_cursor = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""
 "skyline 플러그인
