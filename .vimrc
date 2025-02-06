@@ -44,6 +44,9 @@ au FileType python setlocal expandtab
 "tab를 space로: :retab
 "space를 tab로: :retab!
 
+"
+set fileencodings+=euc-kr
+
 "From an example of fold.txt
 "set foldtext=MyFoldText()
 function MyFoldText()

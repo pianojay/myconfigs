@@ -125,3 +125,4 @@ export PATH="$PATH:/home/linoops/.local/bin"
 # Customizing initial actions
 # my1 should be in the ~ directory.
 . ~/my1
+
