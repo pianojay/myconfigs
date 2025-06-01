@@ -96,7 +96,7 @@ set numberwidth=3
 set ruler
 
 "한 줄이 다음 줄로 넘어가는 것 표시하는 스트링
-set showbreak=╘🞂
+set showbreak=┕▸
 
 "NORMAL 모드에서 cmd를 입력 중에 마지막 줄 오른쪽에 보여줌
 set showcmd
@@ -175,11 +175,11 @@ let g:codedark_italics=1
 colorscheme codedark
 
 "나는 이 무늬가 좋아.
-highlight Normal ctermbg=0
-highlight EndOfBuffer ctermbg=0
-highlight LineNR ctermbg=0
-highlight TabLineSel ctermbg=0
-highlight ColorColumn ctermbg=234
+"highlight Normal ctermbg=0
+"highlight EndOfBuffer ctermbg=0
+"highlight LineNR ctermbg=0
+"highlight TabLineSel ctermbg=0
+"highlight ColorColumn ctermbg=234
 
 """""""""""""""""""""""""""""""""""""""""""""""
 "미니맵 플러그인
@@ -227,14 +227,14 @@ let g:ale_virtualtext_cursor = 0
 "선택적 플러그인 스위치
 "*만약 플러그인을 못 찾으면 경고가 뜬다.
 "~/.vim/foo/pack/opt
-packadd Snipmate
-packadd ale
+"packadd Snipmate
+"packadd ale
 "packadd lsp
 "packadd minimap.vim
 packadd nerdtree
 "packadd skyline.vim
 packadd vim-code-dark
-packadd vim-fugitive
+packadd fugitive
 "packadd vim-sclow
 packadd vim-scrollstatus
 

@@ -2,7 +2,7 @@
 # this code was intended to be my personal use,
 # but I learned that .bashrc is a thing.
 # so instead of using .bashrc only, I just gonna refer this file from .bashrc
-echo Customizing prompt...
-export PS1='\[\e[33m\]\A\[\e[2;35;40m\] \u\[\e[92;2m\]\w\[\e[0;0m\]🐧 '
+# echo Customizing prompt...
+export PS1='\[\e[93m\]\A\[\e[0;95m\] \u\[\e[92m\]\w\[\e[0m\]🐧 '
 # echo Windowy Texty...
 # cd /ty
